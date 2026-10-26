@@ -1,0 +1,5 @@
+name: "cost"
+version: "0.1.0"
+usage: "helm cost [--price-cpu N] [--price-mem N] RELEASE CHART [helm template flags]"
+description: "Estimate a chart's CPU/memory requests, limits and rough monthly cost before installing it."
+command: "$HELM_PLUGIN_DIR/bin/helm-cost"
