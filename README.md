@@ -29,19 +29,20 @@ Estimated monthly cost (based on requests): 7.66
 
 ## Installation
 
-> Release binaries and a one-command install are planned. For now, build from source.
+```bash
+helm plugin install https://github.com/fadedreams/helm-cost
+```
 
-**Requirements:** [Helm](https://helm.sh/docs/intro/install/) 3 or later, and [Go](https://go.dev/dl/) 1.22 or later.
+On Helm 4 you may need `--verify=false`. Prebuilt binaries are provided for Linux and macOS (amd64 and arm64). Windows users can run it under WSL.
+
+To build from source instead:
 
 ```bash
 git clone https://github.com/fadedreams/helm-cost.git
 cd helm-cost
-go mod tidy
 go build -o bin/helm-cost .
-helm plugin install .
+HELM_COST_SKIP_DOWNLOAD=1 helm plugin install .
 ```
-
-On Helm 4, local plugin installs may need `--verify=false`.
 
 To uninstall:
 
